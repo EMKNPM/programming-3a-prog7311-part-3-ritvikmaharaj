@@ -3,7 +3,7 @@ using PROGPOEP2.Data;
 using PROGPOEP2.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-
+// test change
 
 builder.Services.AddControllersWithViews();
 
