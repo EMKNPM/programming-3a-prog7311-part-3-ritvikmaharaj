@@ -1,0 +1,41 @@
+﻿@model PROGPOEP2.Models.Contract
+
+<h2>Create Contract</h2>
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+
+    <div>
+        <p>Client</p>
+        <select asp-for="ClientId">
+            @foreach (var client in ViewBag.Clients)
+            {
+                <option value="@client.Id">@client.Name (@client.Region)</option>
+            }
+        </select>
+    </div>
+
+    <div>
+        <p>Start Date</p>
+        <input asp-for="ContractStartDate" type="date" />
+    </div>
+
+    <div>
+        <p>End Date</p>
+        <input asp-for="ContractEndDate" type="date" />
+    </div>
+
+    <div>
+        <p>Service Level</p>
+        <input asp-for="ServiceLevel" />
+    </div>
+
+    <div>
+        <p>Upload Signed PDF</p>
+        <input type="file" name="file" />
+    </div>
+
+    <div>
+        <button type="submit">Create</button>
+    </div>
+
+</form>

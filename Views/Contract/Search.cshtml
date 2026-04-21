@@ -1,0 +1,29 @@
+﻿<h2>Search Contracts</h2>
+
+<form asp-action="Search" method="post">
+
+    <div>
+        <p>Start Date</p>
+        <input type="date" name="start" />
+    </div>
+
+    <div>
+        <p>End Date</p>
+        <input type="date" name="end" />
+    </div>
+
+    <div>
+        <p>Status</p>
+        <select name="status">
+            <option>Draft</option>
+            <option>Active</option>
+            <option>Expired</option>
+            <option>OnHold</option>
+        </select>
+    </div>
+
+    <div>
+        <button type="submit">Search</button>
+    </div>
+
+</form>

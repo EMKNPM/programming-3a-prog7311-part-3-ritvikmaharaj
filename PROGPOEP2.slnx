@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../PROGPOEP2.Tests/PROGPOEP2.Tests.csproj" Id="01ffccf8-f8fa-4d28-ae2b-e957738b7fcd" />
+  <Project Path="PROGPOEP2.csproj" />
+</Solution>

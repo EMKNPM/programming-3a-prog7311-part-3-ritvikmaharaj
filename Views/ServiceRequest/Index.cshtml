@@ -1,0 +1,22 @@
+﻿@model List<PROGPOEP2.Models.ServiceRequest>
+
+<h2>Service Requests</h2>
+
+
+<div style="display:flex; gap:30px; font-weight:bold; margin-bottom:10px;">
+    <div style="width:120px;">Contract ID</div>
+    <div style="width:300px;">Description</div>
+    <div style="width:120px;">Cost (ZAR)</div>
+    <div style="width:120px;">Status</div>
+</div>
+
+
+@foreach (var r in Model)
+{
+    <div style="display:flex; gap:30px; margin-bottom:8px;">
+        <div style="width:120px;">@r.ContractId</div>
+        <div style="width:300px;">@r.Description</div>
+        <div style="width:120px;">@r.Cost</div>
+        <div style="width:120px;">@r.Status</div>
+    </div>
+}

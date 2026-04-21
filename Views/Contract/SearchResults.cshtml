@@ -1,0 +1,26 @@
+﻿@model List<PROGPOEP2.Models.Contract>
+
+<h2>Contract Results</h2>
+
+
+<div style="display:flex; gap:30px; font-weight:bold; margin-bottom:10px;">
+    <div style="width:150px;">Client Name</div>
+    <div style="width:120px;">Region</div>
+    <div style="width:100px;">Status</div>
+    <div style="width:140px;">Start Date</div>
+    <div style="width:140px;">End Date</div>
+    <div style="width:140px;">Service Level</div>
+</div>
+
+
+@foreach (var c in Model)
+{
+    <div style="display:flex; gap:30px; margin-bottom:8px;">
+        <div style="width:150px;">@c.Client.Name</div>
+        <div style="width:120px;">@c.Client.Region</div>
+        <div style="width:100px;">@c.Status</div>
+        <div style="width:140px;">@c.ContractStartDate</div>
+        <div style="width:140px;">@c.ContractEndDate</div>
+        <div style="width:140px;">@c.ServiceLevel</div>
+    </div>
+}
