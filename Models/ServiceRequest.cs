@@ -1,4 +1,6 @@
-﻿namespace PROGPOEP2.Models
+﻿using System.Text.Json.Serialization;
+
+namespace GLMS.API.Models
 {
     public class ServiceRequest
     {
@@ -9,9 +11,9 @@
         public string Description { get; set; }
 
         public decimal Cost { get; set; }
-
-        public string Status { get; set; }
-
-        public Contract Contract { get; set; }
+        
+        public string? Status { get; set; }
+        
+        public Contract? Contract { get; set; }
     }
 }

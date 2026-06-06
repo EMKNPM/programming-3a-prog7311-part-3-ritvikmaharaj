@@ -1,4 +1,4 @@
-﻿namespace PROGPOEP2.Models
+﻿namespace GLMS.API.Models
 {
     public class Contract
     {
@@ -14,11 +14,11 @@
 
         public string ServiceLevel { get; set; }
 
-        public string FilePath { get; set; }
+        public string? FilePath { get; set; }
 
-        public Client Client { get; set; }
+        public Client? Client { get; set; }
 
-        public ICollection<ServiceRequest> ServiceRequests { get; set; }
+        public ICollection<ServiceRequest>? ServiceRequests { get; set; }
     }
 
     public enum ContractStatus

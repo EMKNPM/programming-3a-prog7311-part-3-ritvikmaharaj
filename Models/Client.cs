@@ -1,5 +1,5 @@
 ﻿
-namespace PROGPOEP2.Models
+namespace GLMS.API.Models
 {
     public class Client
     {
