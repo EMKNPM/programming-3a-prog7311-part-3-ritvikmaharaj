@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using PROGPOEP2.Data;
 using PROGPOEP2.Models;
 using PROGPOEP2.Services;
 
@@ -8,39 +6,43 @@ namespace PROGPOEP2.Controllers
 {
     public class ServiceRequestController : Controller
     {
-        private readonly ServiceRequestService _service;
-        private readonly LogisticsDbContext _context;
+        private readonly ApiClientService _api;
 
-        public ServiceRequestController(ServiceRequestService service, LogisticsDbContext context)
+        public ServiceRequestController(ApiClientService api)
         {
-            _service = service;
-            _context = context;
+            _api = api;
         }
+
 
         [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+            var contracts = await _api.GetContracts();
 
-            ViewBag.Contracts = _context.Contracts.Include(c => c.Client).ToList();
-            return View();
+            ViewBag.Contracts = contracts;
 
+            return View(new ServiceRequest());
         }
 
-        public IActionResult Index()
-        {
-
-            var requests = _context.ServiceRequests .Include(r => r.Contract) .ThenInclude(contract => contract.Client) .ToList();
-            return View(requests);
-
-        }
 
         [HttpPost]
         public async Task<IActionResult> Create(ServiceRequest request, decimal usdAmount)
         {
+            if (request == null || request.ContractId == 0)
+            {
+                return BadRequest("Invalid service request");
+            }
 
-            await _service.CreateServiceRequest(request, usdAmount);
+            await _api.CreateServiceRequest(request, usdAmount);
+
             return RedirectToAction("Index");
+        }
 
+
+        public async Task<IActionResult> Index()
+        {
+            var requests = await _api.GetServiceRequests();
+            return View(requests);
         }
     }
 }

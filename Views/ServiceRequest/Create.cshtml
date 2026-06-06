@@ -6,26 +6,30 @@
 
     <div>
         <p>Contract</p>
-        <select asp-for="ContractId">
+
+        <select asp-for="ContractId" class="form-control">
             <option value="">-- Select Contract --</option>
 
-            @foreach (var c in ViewBag.Contracts)
+            @if (ViewBag.Contracts != null)
             {
-                <option value="@c.Id">
-                    @c.Id - @c.Client.Name
-                </option>
+                foreach (var c in ViewBag.Contracts)
+                {
+                    <option value="@c.Id">
+                        Contract @c.Id - @c.Client?.Name
+                    </option>
+                }
             }
         </select>
     </div>
 
     <div>
         <p>Description</p>
-        <input asp-for="Description" />
+        <input asp-for="Description" class="form-control" />
     </div>
 
     <div>
         <p>USD Amount</p>
-        <input name="usdAmount" type="number" step="0.01" />
+        <input name="usdAmount" type="number" step="0.01" class="form-control" />
     </div>
 
     <div>

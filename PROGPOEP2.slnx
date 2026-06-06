@@ -1,4 +1,5 @@
 <Solution>
-  <Project Path="../PROGPOEP2.Tests/PROGPOEP2.Tests.csproj" Id="01ffccf8-f8fa-4d28-ae2b-e957738b7fcd" />
+  <Project Path="../GLMS.API/GLMS.API.csproj" Id="01bad187-a78f-454f-ba98-94446ed1b1b3" />
+  <Project Path="../GLMS.Test/GLMS.Test.csproj" Id="8c1db99a-2578-4b28-9c56-5746848a0306" />
   <Project Path="PROGPOEP2.csproj" />
 </Solution>

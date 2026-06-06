@@ -8,6 +8,7 @@
         <p>Client</p>
         <select asp-for="ClientId">
             @foreach (var client in ViewBag.Clients)
+            
             {
                 <option value="@client.Id">@client.Name (@client.Region)</option>
             }
